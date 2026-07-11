@@ -2,112 +2,149 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap');
 
 :root {
-  --brand: #5e6ad2;
-  --accent: #7170ff;
-  --green: #10b981;
+  /* Warm-tinted neutrals (no pure white/black) */
+  --ink:        #0d0d0f;
+  --ink-soft:   #2a2a2e;
+  --ink-mute:   #6b6b73;
+  --paper:      #f7f5f0;
+  --paper-warm: #efeae0;
+  --line:       rgba(13, 13, 15, 0.08);
+
+  /* Accent — kept sparingly */
+  --brand:      #5e6ad2;
+  --accent:     #7170ff;
+  --hot:        #d97757;   /* warm ember accent */
+  --green:      #10b981;
+
+  --font-display: 'Instrument Serif', 'Times New Roman', serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
-  font-family: 'Inter', -apple-system, sans-serif;
-  background: #fafafa;
-  color: #0a0a0a;
+  overflow-x: clip;
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--ink);
   -webkit-font-smoothing: antialiased;
-  line-height: 1.6;
+  line-height: 1.55;
+  font-feature-settings: "ss01", "cv11";
 }
 
-/* Liquid Glass */
+/* Display family (serif italic accents) */
+.display    { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.01em; }
+.display-it { font-family: var(--font-display); font-style: italic; font-weight: 400; letter-spacing: -0.005em; }
+
+/* Warm glass surfaces */
 .glass {
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 253, 248, 0.72);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.8);
-}
-
-.glass-dark {
-  background: rgba(10, 10, 10, 0.72);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  color: #fff;
+  border: 1px solid rgba(255, 253, 248, 0.6);
+  box-shadow: 0 8px 32px rgba(60, 40, 20, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 253, 248, 0.55);
   backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(13, 13, 15, 0.06);
+  box-shadow: 0 4px 16px rgba(60, 40, 20, 0.03);
   border-radius: 16px;
-  transition: all 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s cubic-bezier(0.16,1,0.3,1);
 }
-
 .glass-card:hover {
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  box-shadow: 0 12px 32px rgba(60, 40, 20, 0.06);
   transform: translateY(-2px);
 }
 
-/* Parallax container */
-.parallax-section {
-  transform-style: preserve-3d;
-  perspective: 1000px;
+/* Micro grain */
+.grain::after {
+  content: "";
+  position: absolute; inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }
 
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #5e6ad2, #7170ff, #10b981);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* Underline accent (roman + warm) */
+.mark-under {
+  background-image: linear-gradient(transparent 62%, rgba(217, 119, 87, 0.25) 62%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 0 0.06em;
 }
 
-/* Smooth reveal animation */
+/* Ember dot */
+.ember {
+  display: inline-block;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--hot);
+  box-shadow: 0 0 0 0 rgba(217, 119, 87, 0.6);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(217, 119, 87, 0.55); }
+  50%      { box-shadow: 0 0 0 10px rgba(217, 119, 87, 0);   }
+}
+
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.animate-in {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-/* Telegram message styles */
+/* Telegram messages */
 .tg-msg {
-  max-width: 80%;
+  max-width: 82%;
   padding: 10px 14px;
-  border-radius: 12px;
+  border-radius: 14px;
   font-size: 14px;
   line-height: 1.5;
   margin-bottom: 8px;
 }
-
 .tg-user {
-  background: var(--brand);
-  color: #fff;
+  background: var(--ink);
+  color: var(--paper);
   margin-left: auto;
   border-bottom-right-radius: 4px;
 }
-
 .tg-bot {
-  background: #f0f0f0;
-  color: #0a0a0a;
+  background: rgba(13, 13, 15, 0.05);
+  color: var(--ink);
   border-bottom-left-radius: 4px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .hero-title { font-size: clamp(28px, 6vw, 40px) !important; }
-  .grid-3 { grid-template-columns: 1fr !important; }
-  .grid-2 { grid-template-columns: 1fr !important; }
+/* Terminal look */
+.term {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #d4d0c8;
+  background: #14131a;
+  border-radius: 12px;
+}
+
+/* Focus */
+*:focus-visible {
+  outline: 2px solid var(--hot);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
 }

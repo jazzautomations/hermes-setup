@@ -14,7 +14,8 @@
     "react-dom": "^18.3.0",
     "three": "^0.160.0",
     "@react-three/fiber": "^8.15.0",
-    "@react-three/drei": "^9.88.0"
+    "@react-three/drei": "^9.88.0",
+    "lucide-react": "^0.462.0"
   },
   "devDependencies": {
     "typescript": "^5.0.0",
