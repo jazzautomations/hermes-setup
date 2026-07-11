@@ -91,21 +91,21 @@ export default function Home() {
         <div className="relative z-10 max-w-[800px] mx-auto px-5 text-center" style={{transform:`translateY(${scrollY*-0.2}px)`}}>
           <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full mb-10" style={{background:'rgba(255,255,255,0.7)',backdropFilter:'blur(16px)',border:'1px solid rgba(255,255,255,0.8)',boxShadow:'0 4px 16px rgba(0,0,0,0.04)',animation:'fadeInUp 0.6s ease-out'}}>
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"/>
-            <span className="text-[13px] font-medium text-gray-500">Rodando agora &mdash; 24h por dia, 7 dias por semana</span>
+            <span className="text-[13px] font-medium text-gray-500">Ativo agora &mdash; trabalhando 24 horas por dia, 7 dias por semana</span>
           </div>
 
           <h1 className="text-[clamp(38px,7vw,68px)] font-bold leading-[1.02] tracking-[-3px] mb-7" style={{animation:'fadeInUp 0.7s ease-out 0.1s both'}}>
             Voce perde 3 horas por dia<br/>em tarefas repetitivas.<br/>
-            <span className="gradient-text">Agora tem alguem fazendo isso.</span>
+            <span className="gradient-text">Agora tem alguem fazendo isso por voce.</span>
           </h1>
 
-          <p className="text-[18px] md:text-[20px] text-gray-500 leading-[1.7] max-w-[580px] mx-auto mb-11" style={{animation:'fadeInUp 0.7s ease-out 0.2s both'}}>
-            O Hermes e um assistente inteligente que mora no seu <strong className="text-gray-700">Telegram</strong>, cria <strong className="text-gray-700">agentes sob medida</strong> pro seu negocio e <strong className="text-gray-700">executa tarefas reais</strong> por voce. Nao e so um chatbot &mdash; ele <strong className="text-gray-700">conststrói, gerencia e vende</strong>.
+          <p className="text-[18px] md:text-[20px] text-gray-500 leading-[1.7] max-w-[620px] mx-auto mb-11" style={{animation:'fadeInUp 0.7s ease-out 0.2s both'}}>
+            O Hermes e um assistente inteligente que mora no seu <strong className="text-gray-700">Telegram</strong> e faz o que voce faz &mdash; so que mais rapido, sem esquecer nada e sem precisar dormir. Ele <strong className="text-gray-700">cria CRMs sob medida</strong>, <strong className="text-gray-700">monta dashboards interativos</strong>, <strong className="text-gray-700">gerencia WhatsApp</strong>, <strong className="text-gray-700">responde emails</strong> e ainda <strong className="text-gray-700">constroi design systems</strong> pro seu negocio. E tudo isso sem voce precisar abrir um unico app novo.
           </p>
 
           <div className="flex items-center justify-center gap-4 flex-wrap" style={{animation:'fadeInUp 0.7s ease-out 0.3s both'}}>
             <a href="#oferta" className="px-7 py-3.5 rounded-xl bg-black text-white text-[15px] font-semibold hover:opacity-85 transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:shadow-black/10">Quero meu Hermes &rarr;</a>
-            <a href="#como-funciona" className="px-7 py-3.5 rounded-xl text-[15px] font-medium text-gray-600 hover:text-black transition-all duration-300 hover:scale-[1.02]" style={{background:'rgba(255,255,255,0.6)',backdropFilter:'blur(12px)',border:'1px solid rgba(0,0,0,0.08)'}}>Como funciona</a>
+            <a href="#como-funciona" className="px-7 py-3.5 rounded-xl text-[15px] font-medium text-gray-600 hover:text-black transition-all duration-300 hover:scale-[1.02]" style={{background:'rgba(255,255,255,0.6)',backdropFilter:'blur(12px)',border:'1px solid rgba(0,0,0,0.08)'}}>Ver como funciona</a>
           </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-32 z-[3] bg-gradient-to-t from-[#fafafa] to-transparent"/>
@@ -114,24 +114,40 @@ export default function Home() {
       {/* Prova Social */}
       <Reveal><section className="max-w-[1100px] mx-auto px-5 md:px-12 py-10">
         <div className="flex gap-16 flex-wrap">
-          <div className="text-[15px] text-gray-500"><strong className="text-black font-bold text-[20px]"><Counter target={3}/></strong> empresas usando</div>
+          <div className="text-[15px] text-gray-500"><strong className="text-black font-bold text-[20px]"><Counter target={3}/></strong> empresas confiando</div>
           <div className="text-[15px] text-gray-500"><strong className="text-black font-bold text-[20px]"><Counter target={2400} suffix="+"/></strong> mensagens processadas</div>
-          <div className="text-[15px] text-gray-500"><strong className="text-black font-bold text-[20px]"><Counter target={98} suffix="%"/></strong> taxa de resolucao</div>
+          <div className="text-[15px] text-gray-500"><strong className="text-black font-bold text-[20px]"><Counter target={98} suffix="%"/></strong> taxa de satisfacao</div>
         </div>
       </section></Reveal>
+
+      {/* ═══ PROBLEMA ═══ */}
+      <section className="py-28" style={{background:'linear-gradient(180deg, #f5f5f5 0%, #fafafa 100%)'}}>
+        <div className="max-w-[1100px] mx-auto px-5 md:px-12">
+          <Reveal><div className="max-w-[700px] mx-auto text-center mb-16">
+            <h2 className="text-[clamp(26px,4vw,40px)] font-bold tracking-[-1.5px] mb-6 leading-tight">O problema nao e falta de ferramenta.<br/>E sobrar trabalho.</h2>
+            <p className="text-[17px] text-gray-500 leading-[1.8]">
+              Voce ja tem WhatsApp, email, calendario, planilha, Instagram, site. Cada um pede atencao. Cada um gera trabalho. E no final do dia, voce gastou 3 horas respondendo mensagem que um sistema poderia ter resolvido em 3 minutos.
+              <br/><br/>
+              <strong className="text-gray-700">E pior:</strong> quando voce ta dormindo, seus clientes mandam mensagem e ninguem responde. O lead esfria. O cliente vai embora. O dinheiro Some.
+              <br/><br/>
+              <strong className="text-gray-700">A solucao nao e contratar alguem.</strong> E ter um sistema inteligente que trabalha por voce &mdash; enquanto voce foca no que realmente importa: vender e crescer.
+            </p>
+          </div></Reveal>
+        </div>
+      </section>
 
       {/* ═══ COMO FUNCIONA ═══ */}
       <section id="como-funciona" className="max-w-[1100px] mx-auto px-5 md:px-12 py-28">
         <Reveal><div className="mb-16 text-center">
           <div className="inline-block px-3 py-1 rounded-full bg-brand/10 text-brand text-[12px] font-semibold mb-4 uppercase tracking-wider">Como funciona</div>
-          <h2 className="text-[clamp(26px,4vw,40px)] font-bold tracking-[-1.5px] mb-4">Voce pede. Ele cria. Pronto.</h2>
-          <p className="text-[17px] text-gray-500">Um unico comando no Telegram e o Hermes faz o resto.</p>
+          <h2 className="text-[clamp(26px,4vw,40px)] font-bold tracking-[-1.5px] mb-4">Voce manda uma mensagem.<br/>O Hermes resolve.</h2>
+          <p className="text-[17px] text-gray-500 max-w-[600px] mx-auto">Sem app novo. Sem painel complicado. Sem curva de aprendizado. So o Telegram que voce ja usa todo dia.</p>
         </div></Reveal>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            {step:'1',title:'Voce pede pelo Telegram',desc:'Manda uma mensagem normal: "Cria um CRM pros meus clientes" ou "Automatiza meu WhatsApp". Sem app novo, sem painel. So o Telegram que voce ja usa.'},
-            {step:'2',title:'O Hermes cria e executa',desc:'Ele monta o CRM, configura os agentes, cria dashboards, conecta com suas ferramentas. Tudo automatico, tudo sob medida pro seu negocio.'},
-            {step:'3',title:'Voce recebe o resultado',desc:'Em minutos, o Hermes te manda o resultado no Telegram. "CRM pronto. Agentes configurados. Dashboard atualizado." Sem voce fazer nada.'},
+            {step:'1',title:'Voce pede pelo Telegram',desc:'Manda uma mensagem como se fosse pra um funcionario: "Cria um CRM pros meus clientes" ou "Automatiza meu WhatsApp". O Hermes entende e comeca a trabalhar na hora.'},
+            {step:'2',title:'O Hermes cria e executa',desc:'Ele monta o CRM, configura os agentes de WhatsApp, cria dashboards com seus dados, conecta com suas ferramentas existentes. Tudo automatico, tudo sob medida pro seu negocio.'},
+            {step:'3',title:'Voce recebe o resultado',desc:'Em minutos, o Hermes te manda o resultado no Telegram: "CRM pronto com 50 clientes. Agentes configurados. Dashboard atualizado. Follow-up automatico em 24h." Voce so confere e aproveita.'},
           ].map((item,i)=>(
             <Reveal key={item.step} delay={i*0.12}>
               <div className="relative p-8 rounded-[16px] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/[0.04]" style={{background:'rgba(255,255,255,0.7)',backdropFilter:'blur(16px)',border:'1px solid rgba(255,255,255,0.8)',boxShadow:'0 4px 16px rgba(0,0,0,0.03)'}}>
@@ -148,17 +164,21 @@ export default function Home() {
       <section className="max-w-[1100px] mx-auto px-5 md:px-12 py-28">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
           <Reveal><div>
-            <div className="inline-block px-3 py-1 rounded-full bg-brand/10 text-brand text-[12px] font-semibold mb-4 uppercase tracking-wider">Demo</div>
-            <h2 className="text-[clamp(26px,4vw,40px)] font-bold tracking-[-1.5px] mb-5 leading-tight">Nao e um chatbot que responde.<br/><span className="gradient-text">Ele constroi coisas.</span></h2>
-            <div className="space-y-4 mt-6">
+            <div className="inline-block px-3 py-1 rounded-full bg-brand/10 text-brand text-[12px] font-semibold mb-4 uppercase tracking-wider">Demonstracao</div>
+            <h2 className="text-[clamp(26px,4vw,40px)] font-bold tracking-[-1.5px] mb-5 leading-tight">Nao e um chatbot que responde perguntas.<br/><span className="gradient-text">E um sistema que constroi coisas.</span></h2>
+            <p className="text-[16px] text-gray-500 leading-[1.7] mb-6">
+              Quando voce pede algo pro Hermes, ele nao so responde &mdash; ele <strong className="text-gray-700">executa</strong>. Cria arquivos, configura integracoes, monta estruturas, gera relatorios. E faz tudo isso em tempo real, enquanto voce toma seu cafe.
+            </p>
+            <div className="space-y-4">
               {[
-                {text:'Cria um dashboard de vendas com os meus dados',icon:'📊'},
-                {text:'Monta um CRM pros leads do Instagram',icon:'💼'},
-                {text:'Automatiza o follow-up no WhatsApp',icon:'🔄'},
-                {text:'Cria um design system pro meu app',icon:'🎨'},
+                {text:'"Cria um dashboard de vendas com os meus dados"',icon:'📊'},
+                {text:'"Monta um CRM pros leads do Instagram"',icon:'💼'},
+                {text:'"Automatiza o follow-up no WhatsApp"',icon:'🔄'},
+                {text:'"Cria um design system pro meu app"',icon:'🎨'},
+                {text:'"Resumo dos meus emails de hoje"',icon:'📧'},
               ].map((ex,i)=>(<div key={i} className="flex items-center gap-3 text-[15px] text-gray-600"><span className="text-[18px]">{ex.icon}</span> {ex.text}</div>))}
             </div>
-            <p className="text-[14px] text-gray-400 mt-6 italic">Coisas que o Hermes ja fez de verdade.</p>
+            <p className="text-[14px] text-gray-400 mt-6 italic">Coisas que o Hermes ja fez de verdade pra clientes.</p>
           </div></Reveal>
 
           <Reveal delay={0.15}><div className="relative">
@@ -166,13 +186,13 @@ export default function Home() {
             <div className="relative rounded-[16px] overflow-hidden" style={{background:'rgba(255,255,255,0.8)',backdropFilter:'blur(24px)',border:'1px solid rgba(255,255,255,0.9)',boxShadow:'0 24px 48px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.02)'}}>
               <div className="px-5 py-3.5 flex items-center gap-3.5" style={{background:'rgba(240,240,240,0.8)',borderBottom:'1px solid rgba(0,0,0,0.06)'}}>
                 <div className="w-11 h-11 rounded-full bg-gradient-to-br from-brand to-accent flex items-center justify-center text-white font-bold text-[17px] shadow-sm">H</div>
-                <div><div className="text-[15px] font-semibold">Hermes</div><div className="text-[12px] text-green-500 font-medium">online agora</div></div>
+                <div><div className="text-[15px] font-semibold">Hermes</div><div className="text-[12px] text-green-500 font-medium">trabalhando agora</div></div>
               </div>
-              <div className="p-5 space-y-3.5 min-h-[340px]" style={{background:'rgba(255,255,255,0.5)'}}>
+              <div className="p-5 space-y-3.5 min-h-[380px]" style={{background:'rgba(255,255,255,0.5)'}}>
                 <div className="tg-msg tg-user">Cria um CRM pros meus 50 clientes do WhatsApp</div>
-                <div className="tg-msg tg-bot"><strong>CRM criado!</strong><br/>• 50 clientes importados<br/>• Tags automaticas por status<br/>• Pipeline de vendas configurado<br/>• Dashboard com metricas<br/><br/>Quer que eu crie automacoes de follow-up?</div>
+                <div className="tg-msg tg-bot"><strong>CRM criado com sucesso!</strong><br/><br/>📋 <strong>50 clientes</strong> importados e organizados<br/>🏷️ Tags automaticas por status (ativo, pendente, inativo)<br/>📊 Pipeline de vendas com 4 etapas<br/>📈 Dashboard com metricas em tempo real<br/><br/>Quer que eu crie automacoes de follow-up pra cada etapa?</div>
                 <div className="tg-msg tg-user">Sim, e manda um resumo do dashboard</div>
-                <div className="tg-msg tg-bot">✓ 12 leads quentes identificados<br/>✓ Follow-up automatico em 24h<br/>✓ Dashboard: ticket medio R$850, taxa conversao 23%</div>
+                <div className="tg-msg tg-bot">✅ <strong>12 leads quentes</strong> identificados (interacao recente)<br/>✅ <strong>Follow-up automatico</strong> agendado em 24h pra 8 clientes<br/>✅ <strong>Ticket medio:</strong> R$850<br/>✅ <strong>Taxa de conversao:</strong> 23% (acima da media do setor)<br/>✅ <strong>Receita potencial:</strong> R$42.500 este mes</div>
               </div>
             </div>
           </div></Reveal>
@@ -183,20 +203,20 @@ export default function Home() {
       <section id="recursos" className="py-28" style={{background:'linear-gradient(180deg, #f5f5f5 0%, #fafafa 100%)'}}>
         <div className="max-w-[1100px] mx-auto px-5 md:px-12">
           <Reveal><div className="mb-14">
-            <h2 className="text-[clamp(26px,4vw,40px)] font-bold tracking-[-1.5px] mb-3">Tudo que voce imaginar, ele constroi.</h2>
-            <p className="text-[17px] text-gray-500">O Hermes nao so executa &mdash; ele cria ferramentas sob medida pro seu negocio.</p>
+            <h2 className="text-[clamp(26px,4vw,40px)] font-bold tracking-[-1.5px] mb-3">Tudo que voce imaginar, o Hermes constroi.</h2>
+            <p className="text-[17px] text-gray-500">O Hermes nao so executa tarefas &mdash; ele cria ferramentas inteiras sob medida pro seu negocio. CRMs, dashboards, agentes, design systems. Tudo customizado, tudo funcionando.</p>
           </div></Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
-              {icon:'💬',title:'WhatsApp automatizado',desc:'Responde clientes, faz follow-up, agenda reuniao e fecha vendas. Seu WhatsApp trabalhando 24h.'},
-              {icon:'📧',title:'Email inteligente',desc:'Le, resume e responde emails importantes. Ignora spam. Responde no seu tom, na sua ausencia.'},
-              {icon:'📅',title:'Calendario',desc:'Agenda reuniao, envia lembrete, gerencia conflito de horarios. Sem voce abrir o Google Calendar.'},
-              {icon:'🔍',title:'Pesquisa web',desc:'Busca informacao na internet e traz o resumo. Preco de produto, noticia, dado de mercado.'},
-              {icon:'📊',title:'Dashboards interativos',desc:'Cria dashboards com seus dados em tempo real. Vendas, leads, metricas. Tudo visual e atualizado.'},
-              {icon:'💼',title:'CRMs sob medida',desc:'Monta CRM completo pros seus clientes. Pipeline, tags, automacoes. Sem pagar licenca.'},
-              {icon:'🎨',title:'Design systems',desc:'Cria e mantem seu design system. Cores, tipografia, componentes. Consistencia total.'},
-              {icon:'🤖',title:'Subagentes',desc:'Hermes cria agentes especializados que trabalham pra voce. Cada tarefa, um agente dedicado.'},
-              {icon:'⚡',title:'Autonomo 24/7',desc:'Monitora, avisa e executa sem parar. Se algo precisa de atencao as 3h da manha, ele ta la.'},
+              {icon:'💬',title:'WhatsApp automatizado',desc:'Responde clientes 24h, faz follow-up inteligente, agenda reunioes e fecha vendas. Seu WhatsApp trabalhando enquanto voce dorme. Nao perde mais nenhum lead.'},
+              {icon:'📧',title:'Email inteligente',desc:'Le, resume e responde emails importantes na hora. Ignora spam e emails irrelevantes. Responde no seu tom, na sua ausencia. Nunca mais deixa email sem resposta.'},
+              {icon:'📅',title:'Calendario',desc:'Agenda reunioes automaticamente, envia lembretes, resolve conflito de horarios. Integrado com Google Calendar. Voce so aparece na hora certa.'},
+              {icon:'🔍',title:'Pesquisa web',desc:'Busca informacao na internet em tempo real e traz o resumo. Preco de produto, noticia do mercado, dados de concorrencia. Tudo atualizado, tudo rapido.'},
+              {icon:'📊',title:'Dashboards interativos',desc:'Cria dashboards completos com seus dados em tempo real. Vendas, leads, metricas, KPIs. Tudo visual, tudo bonito, tudo atualizado automaticamente.'},
+              {icon:'💼',title:'CRMs sob medida',desc:'Monta CRM completo do zero pros seus clientes. Pipeline de vendas, tags inteligentes, automacoes de follow-up. Sem pagar licenca de Salesforce ou HubSpot.'},
+              {icon:'🎨',title:'Design systems',desc:'Cria e mantem seu design system completo. Cores, tipografia, componentes, iconografia. Consistencia total em todos os seus canais e produtos.'},
+              {icon:'🤖',title:'Subagentes especializados',desc:'O Hermes cria agentes dedicados pra cada tarefa. Um agente pra vender, outro pra suporte, outro pra marketing. Cada um focado no que faz de melhor.'},
+              {icon:'⚡',title:'Autonomo 24/7',desc:'Monitora tudo, avisa quando precisa e executa sem parar. Se algo precisa de atencao as 3h da manha, o Hermes ta la. Sem ferias, sem atestado, sem reclamacao.'},
             ].map((f,i)=>(
               <Reveal key={f.title} delay={i*0.06}>
                 <div className="group p-7 rounded-[16px] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/[0.04]" style={{background:'rgba(255,255,255,0.7)',backdropFilter:'blur(16px)',border:'1px solid rgba(255,255,255,0.8)',boxShadow:'0 4px 16px rgba(0,0,0,0.03)'}}>
@@ -215,7 +235,7 @@ export default function Home() {
         <div className="max-w-[1100px] mx-auto px-5 md:px-12">
           <Reveal><div className="mb-12">
             <h2 className="text-[clamp(26px,4vw,40px)] font-bold tracking-[-1.5px] mb-3">O ChatGPT responde.<br/><span className="gradient-text">O Hermes constroi.</span></h2>
-            <p className="text-[17px] text-gray-500">Voce ja paga R$100/mes no ChatGPT Plus. Pra que, se ele so responde?</p>
+            <p className="text-[17px] text-gray-500 max-w-[600px]">Voce ja paga R$100/mes no ChatGPT Plus. Mas pra que, se ele so responde perguntas? O Hermes faz o trabalho real.</p>
           </div></Reveal>
           <Reveal delay={0.1}><div className="rounded-[16px] overflow-hidden" style={{background:'rgba(255,255,255,0.7)',backdropFilter:'blur(16px)',border:'1px solid rgba(255,255,255,0.8)',boxShadow:'0 8px 32px rgba(0,0,0,0.04)'}}>
             <table className="w-full text-[14px]">
@@ -225,7 +245,7 @@ export default function Home() {
                 <th className="text-center p-5 font-semibold w-[150px]"><span className="gradient-text">Hermes</span></th>
               </tr></thead>
               <tbody>
-                {([['Responde perguntas',true,true],['Cria CRMs sob medida',false,true],['Monta dashboards interativos',false,true],['Gerencia WhatsApp',false,true],['Le e responde emails',false,true],['Cria subagentes',false,true],['Design systems',false,true],['Mensalidade','R$100+/mes','R$0'],['Privacidade','Dados na nuvem','Servidor proprio']] as [string,boolean|string,boolean|string][]).map(([label,chatgpt,hermes],i)=>(
+                {([['Responde perguntas',true,true],['Cria CRMs sob medida',false,true],['Monta dashboards interativos',false,true],['Automatiza WhatsApp',false,true],['Le e responde emails',false,true],['Cria subagentes especializados',false,true],['Constroi design systems',false,true],['Trabalha 24/7 autonomo',false,true],['Mensalidade','R$100+/mes','R$0'],['Privacidade','Dados na nuvem','Servidor proprio']] as [string,boolean|string,boolean|string][]).map(([label,chatgpt,hermes],i)=>(
                   <tr key={i} style={{borderBottom:'1px solid rgba(0,0,0,0.04)'}}>
                     <td className="p-5 text-gray-600 font-medium">{label}</td>
                     <td className="p-5 text-center">{typeof chatgpt==='boolean'?<span className={chatgpt?'text-green-500 font-semibold':'text-red-400 font-semibold'}>{chatgpt?'✓':'✗'}</span>:<span className="text-gray-400 font-medium">{chatgpt}</span>}</td>
@@ -244,25 +264,25 @@ export default function Home() {
           <Reveal><div className="mb-14 text-center">
             <div className="inline-block px-3 py-1 rounded-full bg-brand/10 text-brand text-[12px] font-semibold mb-4 uppercase tracking-wider">Oferta de lancamento</div>
             <h2 className="text-[clamp(26px,4vw,40px)] font-bold tracking-[-1.5px] mb-3">Setup completo. Paga uma vez. Usa pra sempre.</h2>
-            <p className="text-[17px] text-gray-500">Sem mensalidade. Sem surpresa. Em 24h voce ja ta com o Hermes trabalhando.</p>
+            <p className="text-[17px] text-gray-500">Sem mensalidade. Sem surpresa. Em 24 horas voce ja ta com o Hermes trabalhando por voce.</p>
           </div></Reveal>
 
-          <Reveal delay={0.05}><div className="max-w-[500px] mx-auto mb-10 p-5 rounded-[14px] text-center" style={{background:'linear-gradient(135deg, rgba(94,106,210,0.08) 0%, rgba(113,112,255,0.08) 100%)',border:'1px solid rgba(94,106,210,0.15)'}}>
-            <p className="text-[14px] text-gray-600 font-medium">🎁 <strong>Bonus de lancamento:</strong> 30 dias de suporte prioritario incluso em qualquer plano.</p>
+          <Reveal delay={0.05}><div className="max-w-[600px] mx-auto mb-10 p-6 rounded-[14px] text-center" style={{background:'linear-gradient(135deg, rgba(94,106,210,0.08) 0%, rgba(113,112,255,0.08) 100%)',border:'1px solid rgba(94,106,210,0.15)'}}>
+            <p className="text-[15px] text-gray-600 font-medium leading-[1.7]">🎁 <strong>Bonus de lancamento:</strong> 30 dias de suporte prioritario incluso em qualquer plano.<br/>Aproveite antes que essa oferta acabe &mdash; o preco vai subir depois.</p>
           </div></Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
-              {name:'Basico',price:'R$500',desc:'Pra quem quer testar',features:['Instalacao completa em 24h','3 integracoes (WhatsApp, email, calendario)','30 dias de suporte'],cta:'Comecar agora',featured:false},
-              {name:'Profissional',price:'R$2.000',badge:'Mais vendido',desc:'O que mais converte',features:['Integracoes ilimitadas','CRMs e dashboards sob medida','WhatsApp automatizado','30 dias de suporte prioritario'],cta:'Quero o Profissional',featured:true},
-              {name:'Empresa',price:'R$5.000',desc:'Pra equipes e escritorios',features:['Multi-usuario','Integracoes ilimitadas','Treinamento da equipe','Suporte prioritario por 90 dias'],cta:'Falar com vendas',featured:false},
+              {name:'Basico',price:'R$500',desc:'Pra quem quer testar o poder do Hermes',features:['Instalacao completa em 24 horas','3 integracoes (WhatsApp, email, calendario)','Dashboard basico com metricas','30 dias de suporte incluso'],cta:'Comecar agora',featured:false},
+              {name:'Profissional',price:'R$2.000',badge:'Mais vendido',desc:'O plano que mais converte e mais entrega',features:['Integracoes ilimitadas','CRMs e dashboards sob medida','WhatsApp automatizado completo','Subagentes especializados','30 dias de suporte prioritario'],cta:'Quero o Profissional',featured:true},
+              {name:'Empresa',price:'R$5.000',desc:'Pra equipes e escritorios que querem escalar',features:['Multi-usuario simultaneo','Integracoes ilimitadas','Design system completo','Treinamento da equipe','Suporte prioritario por 90 dias'],cta:'Falar com vendas',featured:false},
             ].map((p,i)=>(
               <Reveal key={p.name} delay={i*0.1}>
                 <div className={`relative p-9 flex flex-col rounded-[16px] transition-all duration-300 hover:-translate-y-1 ${p.featured?'ring-2 ring-brand shadow-xl shadow-brand/10':''}`} style={{background:p.featured?'rgba(255,255,255,0.9)':'rgba(255,255,255,0.6)',backdropFilter:'blur(16px)',border:p.featured?'none':'1px solid rgba(255,255,255,0.8)'}}>
                   {p.badge&&<div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-brand text-white text-[11px] font-bold uppercase tracking-wider">{p.badge}</div>}
                   <h3 className="text-[17px] font-semibold mb-1">{p.name}</h3>
                   <p className="text-[13px] text-gray-400 mb-6">{p.desc}</p>
-                  <div className="text-[42px] font-bold tracking-[-2px] mb-1">{p.price} <span className="text-[14px] font-normal text-gray-400 tracking-normal">one-time</span></div>
+                  <div className="text-[42px] font-bold tracking-[-2px] mb-1">{p.price} <span className="text-[14px] font-normal text-gray-400 tracking-normal">pagamento unico</span></div>
                   <ul className="space-y-2.5 my-7 flex-1">
                     {p.features.map(f=>(<li key={f} className="text-[14px] text-gray-600 flex items-center gap-2.5"><span className="w-5 h-5 rounded-full bg-green-500/10 flex items-center justify-center text-green-500 text-[11px] font-bold flex-shrink-0">✓</span> {f}</li>))}
                   </ul>
@@ -273,18 +293,41 @@ export default function Home() {
           </div>
 
           <Reveal delay={0.3}><div className="mt-10 text-center">
-            <p className="text-[14px] text-gray-400">🛡️ <strong>Garantia de 7 dias:</strong> Se nao gostar, devolvemos 100%. Sem perguntas.</p>
+            <p className="text-[14px] text-gray-400">🛡️ <strong>Garantia incondicional de 7 dias:</strong> Se nao gostar, devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.</p>
           </div></Reveal>
         </div>
       </section>
 
-      {/* ═══ CTA ═══ */}
+      {/* ═══ FAQ ═══ */}
+      <section className="py-28" style={{background:'linear-gradient(180deg, #f5f5f5 0%, #fafafa 100%)'}}>
+        <div className="max-w-[700px] mx-auto px-5">
+          <Reveal><h2 className="text-[clamp(26px,4vw,40px)] font-bold tracking-[-1.5px] mb-12 text-center">Perguntas frequentes</h2></Reveal>
+          <div className="space-y-4">
+            {[
+              {q:'Preciso saber programar pra usar o Hermes?',a:'Nao. O Hermes e feito pra quem nao quer programar. Voce so manda mensagem no Telegram e ele faz tudo. Se voce sabe mandar uma mensagem no WhatsApp, voce sabe usar o Hermes.'},
+              {q:'O Hermes funciona com meu WhatsApp atual?',a:'Sim. O Hermes se conecta ao seu WhatsApp existente e comeca a trabalhar. Nao precisa de numero novo, chip novo ou nada do tipo.'},
+              {q:'E se eu nao gostar?',a:'Devolvemos 100% do dinheiro em ate 7 dias. Sem perguntas, sem burocracia. Voce nao tem nada a perder.'},
+              {q:'Quanto tempo demora pra estar funcionando?',a:'O setup completo leva 24 horas. Em menos de 1 dia voce ja ta com o Hermes trabalhando por voce.'},
+              {q:'Meus dados ficam seguros?',a:'Sim. Tudo roda em servidor proprio. Seus dados nao saem do Brasil e nao sao compartilhados com ninguem. Privacidade total.'},
+            ].map((faq,i)=>(
+              <Reveal key={i} delay={i*0.08}>
+                <div className="p-6 rounded-[14px]" style={{background:'rgba(255,255,255,0.7)',backdropFilter:'blur(16px)',border:'1px solid rgba(255,255,255,0.8)'}}>
+                  <h3 className="text-[16px] font-semibold mb-2">{faq.q}</h3>
+                  <p className="text-[15px] text-gray-500 leading-[1.7]">{faq.a}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ CTA FINAL ═══ */}
       <section id="contato" className="py-28 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30" style={{background:'radial-gradient(ellipse at 50% 50%, rgba(94,106,210,0.15) 0%, transparent 70%)'}}/>
         <div className="relative max-w-[600px] mx-auto px-5 text-center">
           <Reveal>
             <h2 className="text-[clamp(26px,5vw,44px)] font-bold tracking-[-1.5px] mb-5 leading-tight">Amanha voce acorda<br/>e o Hermes ja trabalhou<br/><span className="gradient-text">a noite inteira por voce.</span></h2>
-            <p className="text-[17px] text-gray-500 mb-10 leading-relaxed">Setup completo em 24h. Sem mensalidade. Paga uma vez, usa pra sempre.</p>
+            <p className="text-[17px] text-gray-500 mb-10 leading-relaxed">Setup completo em 24 horas. Sem mensalidade. Paga uma vez, usa pra sempre. Comece hoje.</p>
             <a href="https://instagram.com/jazzautomations" target="_blank" rel="noopener" className="inline-block px-9 py-4 rounded-xl bg-black text-white text-[16px] font-semibold hover:opacity-85 transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-black/10">Comecar agora &rarr;</a>
           </Reveal>
         </div>
